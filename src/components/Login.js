@@ -6,6 +6,7 @@ function Login({ setIsLoggedIn }) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    confirm:""
   });
 
   function handleChange(e) {
@@ -27,16 +28,29 @@ function Login({ setIsLoggedIn }) {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Login</h1>
+      <div>
       <input
         type="text"
+        placeholder="username"
         name="username"
         value={formData.username}
         onChange={handleChange}
       />
+      </div>
+      <div>
       <input
         type="password"
+        placeholder="password"
         name="password"
         value={formData.password}
+        onChange={handleChange}
+      />
+      </div>
+       <input
+        type="password"
+        placeholder="confirm password"
+        name="confirm"
+        value={formData.confirm}
         onChange={handleChange}
       />
       <button type="submit">Login</button>
